@@ -8,13 +8,13 @@ use Symfony\Component\Routing\Annotation\Route;
 class MyController
 {
     /**
-     * @Route("/")
+     * @Route("/page/{param}")
      * @return Response
      */
-    public function index()
+    public function index($param = "Welt")
     {
         return new Response(
-            '<html><body>Hallo Welt!</body></html>'
+            sprintf('<html><body>Hallo %s!</body></html>', $param)
         );
     }
 }
