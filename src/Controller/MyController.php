@@ -22,6 +22,8 @@ class MyController extends Controller
     /**
      * @Route("/thingy/{id}", name="thingy", requirements={"id"="\d+"})
      * @param integer $id
+     * @return Response
+     * @throws \LogicException
      */
     public function getThingy($id)
     {
