@@ -2,10 +2,11 @@
 
 namespace App\Controller;
 
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class MyController
+class MyController extends Controller
 {
     /**
      * @Route("/page/{param}", name="page", requirements={"param"="\d+"})
@@ -14,8 +15,6 @@ class MyController
      */
     public function index($param = 234)
     {
-        return new Response(
-            sprintf('<html><body>This is page no %d!</body></html>', $param)
-        );
+        return $this->render('page.html.twig', ['page' => $param]);
     }
 }
