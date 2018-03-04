@@ -37,7 +37,7 @@ class ApiController extends Controller
     {
         $thingy = new Thingy();
         $content = $request->getContent();
-        
+
         if (!empty($content))
         {
             $params = json_decode($content, true);

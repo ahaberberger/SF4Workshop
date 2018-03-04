@@ -3,9 +3,11 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ThingyRepository")
+ * @ApiResource
  */
 class Thingy
 {
@@ -25,6 +27,14 @@ class Thingy
      * @ORM\Column(type="integer")
      */
     private $number;
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * @return mixed
