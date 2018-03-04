@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\OneToMany;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ThingyRepository")
@@ -25,6 +26,11 @@ class Thingy
      * @ORM\Column(type="integer")
      */
     private $number;
+
+    /**
+     * @OneToMany(targetEntity="Thangy", mappedBy="thingy")
+     */
+    private $thangies;
 
     /**
      * @return mixed
@@ -56,5 +62,21 @@ class Thingy
     public function setNumber($number): void
     {
         $this->number = $number;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getThangies()
+    {
+        return $this->thangies;
+    }
+
+    /**
+     * @param mixed $thangies
+     */
+    public function setThangies($thangies): void
+    {
+        $this->thangies = $thangies;
     }
 }

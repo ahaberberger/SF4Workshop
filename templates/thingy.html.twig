@@ -1,3 +1,8 @@
 <div>
     Thingy: {{ thingy.text }} - {{ thingy.number }}
+        <ul>
+            {% for thangy in thingy.thangies %}
+            <li>Thangy: {{ thangy.text }}</li>
+            {% endfor %}
+        </ul>
 </div>
