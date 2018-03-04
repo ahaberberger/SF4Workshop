@@ -57,4 +57,13 @@ class Thingy
     {
         $this->number = $number;
     }
+
+    public function toArray()
+    {
+        return [
+            'id' => $this->id,
+            'text' => $this->text,
+            'number' => $this->number
+        ];
+    }
 }

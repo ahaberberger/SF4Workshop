@@ -24,6 +24,6 @@ class ApiController extends Controller
     {
         $thingy = $this->getDoctrine()->getRepository(Thingy::class)->find($id);
 
-        return new JsonResponse($thingy);
+        return new JsonResponse($thingy->toArray());
     }
 }
